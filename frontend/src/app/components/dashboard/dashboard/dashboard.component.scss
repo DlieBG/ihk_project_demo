@@ -1,0 +1,25 @@
+.body {
+    margin-top: .33em;
+    width: 100%;
+    height: calc(100% - 64px - .33em);
+    overflow: hidden;
+}
+
+.card {
+    width: 100%;
+    height: calc(100% - 3.5em);
+    margin: 1em;
+}
+
+.lu {
+    margin-top: 0;
+}
+
+.ro {
+    margin-left: 0;
+}
+
+.ru {
+    margin-left: 0;
+    margin-top: 0;
+}

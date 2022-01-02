@@ -1,0 +1,49 @@
+.element {
+    display: flex;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+}
+
+.box {
+    width: 24px;
+    height: 24px;
+    border-radius: 3.5px;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.OK {
+    background-color: #00ff00ab;
+}
+
+.NOK {
+    background-color: #ff0000ab;
+}
+
+.EMPTY {
+    background-color: #9c9c9cb0;
+}
+
+.status {
+    text-align: center;
+    height: 100%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 3em;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-100%) translateX(-50%);
+    transform: translateY(-100%) translateX(-50%);
+}
+
+.left {
+    margin-left: -2.5em;
+}
+
+.right {
+    margin-left: .5em;
+}

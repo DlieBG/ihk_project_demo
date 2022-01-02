@@ -1,0 +1,22 @@
+<div class="body" *ngIf="tighteningTask && task">
+    <h2>Auftrag {{ tighteningTask.tighteningTaskNr }}</h2>
+    
+    <table>
+        <tr>
+            <td>Fertigungsauftrag:</td>
+            <td>{{ tighteningTask.faNr }}/{{ tighteningTask.teilNr }}</td>
+        </tr>
+        <tr>
+            <td>Verschraubungsname:</td>
+            <td>{{ task.name }}</td>
+        </tr>
+        <div class="br"></div>
+        <tr>
+            <td>Staus:</td>
+            <td *ngIf="tighteningTask.ready">fertig <mat-icon class="icon OK">done</mat-icon></td>
+            <td *ngIf="!tighteningTask.ready">in Bearbeitung <mat-icon class="icon NOK">handyman</mat-icon></td>
+        </tr>
+    </table>
+    <!-- <div class="br"></div> -->
+    <app-dashboard-control></app-dashboard-control>
+</div>

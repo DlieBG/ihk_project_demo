@@ -1,0 +1,29 @@
+<div class="body" *ngIf="(station && tighteningTask)">
+    <mat-grid-list cols="5" rowHeight="33.33%">
+        <mat-grid-tile [colspan]="3" [rowspan]="2" *ngIf="tightenings" [@flash]="tightenings.length">
+            <mat-card class="card lo">
+                <app-dashboard-tightening-circle [task]="task" [ongoingTightenings]="ongoingTightenings"></app-dashboard-tightening-circle>
+            </mat-card>
+        </mat-grid-tile>
+        
+        <mat-grid-tile [colspan]="2" [rowspan]="1"  *ngIf="tighteningTask.tighteningTaskNr" [@flash]="tighteningTask.tighteningTaskNr">
+            <mat-card class="card ro">
+                <app-dashboard-tighteningtask [tighteningTask]="tighteningTask" [task]="task"></app-dashboard-tighteningtask>
+            </mat-card>
+        </mat-grid-tile>
+        
+        <mat-grid-tile [colspan]="2" [rowspan]="2" *ngIf="tightenings" [@flash]="tightenings.length">
+            <mat-card class="card ru">
+                <app-dashboard-tightening-table [tightenings]="tightenings"></app-dashboard-tightening-table>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="3" [rowspan]="1" *ngIf="tightenings" [@flash]="tightenings.length">
+            <mat-card class="card lu">
+                <app-dashboard-tightening-value [task]="task" [ongoingTightenings]="ongoingTightenings"></app-dashboard-tightening-value>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<app-dashboard-overlay *ngIf="!tighteningTask || (tighteningTask.ready || tighteningTask.reject)" [tighteningTask]="tighteningTask" [@ready]></app-dashboard-overlay>

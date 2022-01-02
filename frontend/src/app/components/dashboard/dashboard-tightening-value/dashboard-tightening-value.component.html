@@ -1,0 +1,54 @@
+<div class="body" *ngIf="ongoingTightenings && ongoingTightenings.length > 0 && task">
+    <div class="values">
+        <div class="center" [class]="ongoingTightenings[ongoingTightenings.length - 1].status">
+            <mat-icon class="status-icon" *ngIf="ongoingTightenings[ongoingTightenings.length - 1].status == 'OK'">check_circle</mat-icon>
+            <mat-icon class="status-icon" *ngIf="ongoingTightenings[ongoingTightenings.length - 1].status == 'NOK'">warning</mat-icon>
+            <span class="spacer"></span>
+            {{ ongoingTightenings[ongoingTightenings.length - 1].torque }} Nm 
+            <span class="spacer"></span>
+            {{ ongoingTightenings[ongoingTightenings.length - 1].angle }}°
+        </div>
+    </div>
+
+    <div class="boxes">
+        <div class="center">
+            <table>
+                <tr>
+                    <!-- Boxen mit Verschraubung -->
+                    <td *ngFor="let tightening of ongoingTightenings">
+                        <div [className]="'box '+tightening.status"></div>
+                    </td>
+
+                    <!-- Auffüllen der Boxen ohne Verschraubung -->
+                    <td *ngFor="let i of [].constructor(task.size - ongoingTightenings.length)">
+                        <div [className]="'box EMPTY'"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Placeholder wenn noch keine Verschraubungen anliegen -->
+<div class="body" *ngIf="!(ongoingTightenings && ongoingTightenings.length > 0) && task">
+    <div class="values">
+        <div class="center">
+            - Nm 
+            <span class="spacer"></span>
+            -°
+        </div>
+    </div>
+
+    <div class="boxes">
+        <div class="center">
+            <table>
+                <tr>
+                    <!-- Auffüllen der Boxen ohne Verschraubung -->
+                    <td *ngFor="let i of [].constructor(task.size)">
+                        <div [className]="'box EMPTY'"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

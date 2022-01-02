@@ -1,0 +1,38 @@
+.body {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+.body::-webkit-scrollbar-track {
+    background: #555;
+    border-radius: 20px;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background-color: #ABABAB;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #666;  /* creates padding around scroll thumb */
+}
+
+table {
+    width: 100%;
+}
+
+td, th {
+    padding-left: 1em !important;
+}
+
+.OK {
+    background-color: #00ff00ab;
+}
+
+.NOK {
+    background-color: #ff0000ab;
+}

@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar">
+  <button mat-icon-button class="icon-button" [@easteregg] *ngIf="rickrole" (click)="rollit()">
+    <mat-icon>question_mark</mat-icon>
+  </button>
+  <span (mouseenter)="rickrole = true">{{ title }}</span>
+  <span class="spacer"></span>
+  <a mat-icon-button href="https://www.flender.com/de/" class="icon-button">
+    <mat-icon>language</mat-icon>
+  </a>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <a href="https://youtu.be/dQw4w9WgXcQ?t=0">&#169; by Benedikt Schwering 2022</a>
+</footer>

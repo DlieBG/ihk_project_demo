@@ -1,0 +1,35 @@
+<div class="body" *ngIf="ongoingTightenings && ongoingTightenings.length > 0 && task">
+    <div class="element" [style]="'transform: rotate('+calculateIAngle(i)+'deg) translate(20vh) rotate('+calculateIAngle(i, true)+'deg);'" *ngFor="let _ of [].constructor(task.size); let i = index;">
+        <div [className]="'box '+ongoingTightenings[i].status" *ngIf="i < ongoingTightenings.length"></div>
+        <div [className]="'box EMPTY'" *ngIf="i >= ongoingTightenings.length"></div>
+
+        <div *ngIf="(i < ongoingTightenings.length && ongoingTightenings[i].status == 'NOK') || (ongoingTightenings[ongoingTightenings.length - 1].status == 'OK' && i == ongoingTightenings.length)">
+            <div *ngIf="calculateIAngle(i) > 90">
+                <mat-icon class="icon left">arrow_forward</mat-icon>
+            </div>
+            <div *ngIf="calculateIAngle(i) <= 90">
+                <mat-icon class="icon right">arrow_back</mat-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="element">
+        <div class="status" *ngIf="ongoingTightenings[ongoingTightenings.length - 1].status == 'NOK'">{{ ongoingTightenings[ongoingTightenings.length - 1].sequence }}</div>
+        <div class="status" *ngIf="ongoingTightenings[ongoingTightenings.length - 1].status == 'OK' && ongoingTightenings.length != task.size">{{ ongoingTightenings[ongoingTightenings.length - 1].sequence + 1 }}</div>
+        <div class="status" *ngIf="ongoingTightenings[ongoingTightenings.length - 1].status == 'OK' && ongoingTightenings.length == task.size"><mat-icon>done</mat-icon></div>
+    </div>
+</div>
+
+<div class="body" *ngIf="!(ongoingTightenings && ongoingTightenings.length > 0) && task">
+    <div class="element" [style]="'transform: rotate('+calculateIAngle(i)+'deg) translate(20vh) rotate('+calculateIAngle(i, true)+'deg);'" *ngFor="let _ of [].constructor(task.size); let i = index; let first = first;">
+        <div [className]="'box EMPTY'"></div>
+
+        <div *ngIf="first">
+            <mat-icon class="icon right">arrow_back</mat-icon>
+        </div>
+    </div>
+
+    <div class="element">
+        <div class="status">1</div>
+    </div>
+</div>

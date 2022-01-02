@@ -1,0 +1,67 @@
+.body {
+    height: 100%;
+}
+
+.values, .boxes {
+    // Wertebereich soll halbe Fläche der gesamten Karte einnehmen
+    height: 50%;
+    width: 100%;
+    // Horizontales Zentrieren des Inhalts
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.values .center {
+    // Vertikales Zentrieren des Inhalts
+    position: absolute;
+    top: 25%;
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%);
+    // Styling für die farbige Statusanzeige
+    padding: .3em;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-radius: 25px;
+    font-size: 4em;
+}
+
+.status-icon {
+    font-size: 50px;
+}
+
+.boxes .center {
+    // Vertikales Zentrieren des Inhalts
+    position: absolute;
+    top: 75%;
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%);
+}
+
+.OK {
+    background-color: #00ff00ab;
+    color: white;
+}
+
+.NOK {
+    background-color: #ff0000ad;
+    color: white;
+}
+
+.EMPTY {
+    background-color: #9c9c9cb0;
+}
+
+.spacer {
+    // Abstand zwischen Drehmoment und Knickwinkel
+    margin: .5em;
+}
+
+.box {
+    // Design der einzelnen Statusboxen
+    width: 25px;
+    height: 25px;
+    border-radius: 3.5px;
+    margin: 5px;
+}
