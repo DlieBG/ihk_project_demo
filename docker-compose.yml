@@ -2,5 +2,6 @@ version: '3.2'
 services:
   ihk_demo:
     build: frontend
+    restart: unless-stopped
     ports:
       - "8084:80"
