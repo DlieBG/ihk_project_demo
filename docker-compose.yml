@@ -1,0 +1,6 @@
+version: '3.2'
+services:
+  ihk_demo:
+    build: frontend
+    ports:
+      - "8084:80"

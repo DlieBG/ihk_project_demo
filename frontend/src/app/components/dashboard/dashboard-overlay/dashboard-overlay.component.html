@@ -5,21 +5,9 @@
             <p>
                 Auftrag wurde abgeschlossen und zurückgemeldet.<br>
                 Es wird auf den nächsten Auftrag gewartet.
-                
             </p>
             <hr>
-            <h2><mat-icon class="green">add</mat-icon> Neuen Auftrag erstellen</h2>
-            <p>
-                Anzahl der Schrauben:
-                <mat-button-toggle-group [(ngModel)]="size">
-                    <mat-button-toggle [value]="8">8</mat-button-toggle>
-                    <mat-button-toggle [value]="10">10</mat-button-toggle>
-                    <mat-button-toggle [value]="12">12</mat-button-toggle>
-                </mat-button-toggle-group>
-                <br>
-                <br>
-                <button mat-raised-button (click)="startTighteningTask()" class="green-button">start!</button>
-            </p>
+            <app-dashboard-overlay-create></app-dashboard-overlay-create>
         </mat-card>
         <mat-card *ngIf="tighteningTask.reject">
             <h2><mat-icon color="warn">close</mat-icon> Auftrag abgebrochen</h2>
@@ -27,6 +15,8 @@
                 Auftrag wurde abgebrochen.<br>
                 Es wird auf den nächsten Auftrag gewartet.
             </p>
+            <hr>
+            <app-dashboard-overlay-create></app-dashboard-overlay-create>
         </mat-card>
     </div>
 </div>
@@ -34,18 +24,7 @@
 <div class="body" *ngIf="!tighteningTask">
     <div class="center">
         <mat-card>
-            <h2><mat-icon class="green">add</mat-icon> Neuen Auftrag erstellen</h2>
-            <p>
-                Anzahl der Schrauben:
-                <mat-button-toggle-group [(ngModel)]="size">
-                    <mat-button-toggle [value]="8">8</mat-button-toggle>
-                    <mat-button-toggle [value]="10">10</mat-button-toggle>
-                    <mat-button-toggle [value]="12">12</mat-button-toggle>
-                </mat-button-toggle-group>
-                <br>
-                <br>
-                <button mat-raised-button (click)="startTighteningTask()" class="green-button">start!</button>
-            </p>
+            <app-dashboard-overlay-create></app-dashboard-overlay-create>
         </mat-card>
     </div>
 </div>

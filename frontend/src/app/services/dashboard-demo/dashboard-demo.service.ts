@@ -80,7 +80,7 @@ export class DashboardDemoService {
 
   newOKTightening() {
     this.tightenings.push({
-      tighteningNr: 1,
+      tighteningNr: this.tightenings.length + 1,
       sequence: (this.ongoingTightenings.length > 0 ? (this.ongoingTightenings[this.ongoingTightenings.length - 1].status == 'OK' ? this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence + 1 : this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence) : 1),
       tighteningTask: 1,
       time: new Date(),
@@ -88,7 +88,7 @@ export class DashboardDemoService {
       angle: 1,
       status: 'OK'
     });
-    this.tighteningsSubscriber.next(this.tightenings);
+    this.tighteningsSubscriber.next(Object.assign([], this.tightenings));
 
     this.ongoingTightenings = this.getOngoingTightenings();
     this.ongoingTighteningsSubscriber.next(this.ongoingTightenings);
@@ -101,7 +101,7 @@ export class DashboardDemoService {
 
   newNOKTightening() {
     this.tightenings.push({
-      tighteningNr: 1,
+      tighteningNr: this.tightenings.length + 1,
       sequence: (this.ongoingTightenings.length > 0 ? (this.ongoingTightenings[this.ongoingTightenings.length - 1].status == 'OK' ? this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence + 1 : this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence) : 1),
       tighteningTask: 1,
       time: new Date(),
@@ -109,7 +109,7 @@ export class DashboardDemoService {
       angle: 1,
       status: 'NOK'
     });
-    this.tighteningsSubscriber.next(this.tightenings);
+    this.tighteningsSubscriber.next(Object.assign([], this.tightenings));
 
     this.ongoingTightenings = this.getOngoingTightenings();
     this.ongoingTighteningsSubscriber.next(this.ongoingTightenings);

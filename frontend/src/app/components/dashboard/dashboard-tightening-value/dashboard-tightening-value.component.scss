@@ -20,7 +20,8 @@
     -ms-transform: translateY(-40%);
     transform: translateY(-40%);
     // Styling für die farbige Statusanzeige
-    padding: .3em;
+    padding: .35em;
+    padding-bottom: .5em;
     padding-left: .5em;
     padding-right: .5em;
     border-radius: 25px;
@@ -28,7 +29,7 @@
 }
 
 .status-icon {
-    font-size: 50px;
+    font-size: 42px;
 }
 
 .boxes .center {

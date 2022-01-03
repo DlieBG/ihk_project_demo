@@ -9,17 +9,11 @@ import { TighteningTask } from 'src/app/types/tightening-task.type';
 })
 export class DashboardOverlayComponent implements OnInit {
 
-  size: number = 8;
-
   @Input() tighteningTask!: TighteningTask;
 
-  constructor(private dashboardDemoService: DashboardDemoService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  startTighteningTask() {
-    this.dashboardDemoService.startTighteningTask(this.size);
   }
 
 }

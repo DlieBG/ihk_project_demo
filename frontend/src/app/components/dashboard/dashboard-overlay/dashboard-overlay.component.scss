@@ -14,24 +14,14 @@
     transform: translate(-50%, -50%);
     width: fit-content;
 }
-
-.green {
-    color: #43ee00e5;
-}
-
 h2 {
     font-weight: 300;
 }
 
 mat-icon {
-    vertical-align: middle;
+    vertical-align: sub;
 }
 
 mat-button-toggle-group {
     margin-left: .5em;
-}
-
-.green-button {
-    background-color: #32af00bb;
-    width: 100%;
 }

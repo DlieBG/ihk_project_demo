@@ -31,6 +31,7 @@ import { DashboardTighteningValueComponent } from './components/dashboard/dashbo
 import { DashboardTighteningtaskComponent } from './components/dashboard/dashboard-tighteningtask/dashboard-tighteningtask.component';
 import { DashboardOverlayComponent } from './components/dashboard/dashboard-overlay/dashboard-overlay.component';
 import { DashboardControlComponent } from './components/dashboard/dashboard-control/dashboard-control.component';
+import { DashboardOverlayCreateComponent } from './components/dashboard/dashboard-overlay/dashboard-overlay-create/dashboard-overlay-create.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DashboardControlComponent } from './components/dashboard/dashboard-cont
     DashboardTighteningValueComponent,
     DashboardTighteningtaskComponent,
     DashboardOverlayComponent,
-    DashboardControlComponent
+    DashboardControlComponent,
+    DashboardOverlayCreateComponent
   ],
   imports: [
     BrowserModule,

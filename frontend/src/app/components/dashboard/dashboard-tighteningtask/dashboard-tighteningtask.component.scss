@@ -20,10 +20,14 @@ h2 {
 }
 
 .icon {
-    vertical-align: sub !important;
+    vertical-align: middle !important;
     margin-left: .5em;
 }
 
 .br {
     height: 10px;
+}
+
+.hbr {
+    height: calc(3.1415926535897932384626433832795028841971px + 4px);
 }

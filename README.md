@@ -11,3 +11,8 @@ Run the following command to start the docker-compose project:
 ``` bash
 docker-compose up
 ```
+
+# live demo
+
+The live demo is available at the following link:
+https://ihk.benedikt-schwering.de/
