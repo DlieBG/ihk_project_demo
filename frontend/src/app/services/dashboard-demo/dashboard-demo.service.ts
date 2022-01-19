@@ -84,8 +84,8 @@ export class DashboardDemoService {
       sequence: (this.ongoingTightenings.length > 0 ? (this.ongoingTightenings[this.ongoingTightenings.length - 1].status == 'OK' ? this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence + 1 : this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence) : 1),
       tighteningTask: 1,
       time: new Date(),
-      torque: 1,
-      angle: 1,
+      torque: this.generateOKTorque(),
+      angle: this.generateOKAngle(),
       status: 'OK'
     });
     this.tighteningsSubscriber.next(Object.assign([], this.tightenings));
@@ -105,8 +105,8 @@ export class DashboardDemoService {
       sequence: (this.ongoingTightenings.length > 0 ? (this.ongoingTightenings[this.ongoingTightenings.length - 1].status == 'OK' ? this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence + 1 : this.ongoingTightenings[this.ongoingTightenings.length - 1].sequence) : 1),
       tighteningTask: 1,
       time: new Date(),
-      torque: 1,
-      angle: 1,
+      torque: this.generateNOKTorque(),
+      angle: this.generateNOKAngle(),
       status: 'NOK'
     });
     this.tighteningsSubscriber.next(Object.assign([], this.tightenings));
@@ -154,6 +154,40 @@ export class DashboardDemoService {
         okTightenings.push(lastTightening);
 
     return okTightenings;
+  }
+
+  getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+  }
+
+  getRandomFloat(max: number) {
+    return Math.floor(Math.random() * max * 100) / 100;
+  }
+
+  getRandomBoolean(): boolean {
+    return Math.random() >= 0.5;
+  }
+
+  generateOKTorque(): number {
+    return 33 + this.getRandomFloat(5);
+  }
+
+  generateOKAngle(): number {
+    return 17 + this.getRandomInt(3);
+  }
+
+  generateNOKTorque(): number {
+    if(this.getRandomBoolean())
+      return 38 + this.getRandomFloat(6);
+    else
+      return 33 - this.getRandomFloat(6);
+  }
+
+  generateNOKAngle(): number {
+    if(this.getRandomBoolean())
+      return 20 + this.getRandomInt(5);
+    else
+      return 17 - this.getRandomInt(4);
   }
 
 }
