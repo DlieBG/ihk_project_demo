@@ -4,9 +4,9 @@
             <mat-icon class="status-icon" *ngIf="ongoingTightenings[ongoingTightenings.length - 1].status == 'OK'">check_circle</mat-icon>
             <mat-icon class="status-icon" *ngIf="ongoingTightenings[ongoingTightenings.length - 1].status == 'NOK'">warning</mat-icon>
             <span class="spacer"></span>
-            {{ ongoingTightenings[ongoingTightenings.length - 1].torque }} Nm 
+            {{ ongoingTightenings[ongoingTightenings.length - 1].torque | number: '1.2-2' }} Nm 
             <span class="spacer"></span>
-            {{ ongoingTightenings[ongoingTightenings.length - 1].angle }}°
+            {{ ongoingTightenings[ongoingTightenings.length - 1].angle | number: '1.0-0' }}°
         </div>
     </div>
 
